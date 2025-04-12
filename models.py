@@ -21,16 +21,15 @@ class Member(Base):
     email = Column(String, unique= True, nullable= False)
 
 class Transaction(Base):
-    __tablename__='transactions'
+    __tablename__= 'transactions'
 
     id = Column(Integer, primary_key=True)
     book_id = Column(Integer, ForeignKey('books.id'), nullable= False)  
     member_id = Column (Integer, ForeignKey('members.id'), nullable= False)
     issue_date = Column(Date, nullable= False)
-    return_date = Column(Date, nullable=True)
+    return_date = Column(Date)
 
-    book = relationship('Book')
-    member = relationship('Member')
-
+    book = relationship('Book', foreign_keys=[book_id])
+    member = relationship('Member', foreign_keys=[member_id])
 
 
