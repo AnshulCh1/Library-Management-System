@@ -17,6 +17,10 @@ def add_new_memb():
     name = input("Enter members name: ")
     email = input("Enter Email: ")
     add_memb(name, email)
+
+def print_memb():
+    pass
+
     
 def main():
     print("*******************************************")
